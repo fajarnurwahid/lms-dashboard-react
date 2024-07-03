@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .sidebar-link-item.active > .sidebar-link-item-link {
+        @apply bg-white/10 text-white;
+    }
+    .sidebar-link-item.active > .sidebar-link-item-sublink {
+        @apply bg-white/10 text-white before:border-white;
+    }
+    .sidebar-link-item.extended > .sidebar-link-item-menu {
+        @apply block;
+    }
+    .sidebar-link-item.extended
+        > .sidebar-link-item-link
+        .sidebar-link-item-chevron,
+    .sidebar-link-item.extended
+        > .sidebar-link-item-sublink
+        .sidebar-link-item-chevron {
+        @apply rotate-90;
+    }
+}
