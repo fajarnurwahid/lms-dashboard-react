@@ -1,5 +1,5 @@
 export default function useSidebar() {
-    function onMouseOutAndLeave(e: React.MouseEvent<HTMLElement>) {
+    function handleMouseOutAndLeave(e: React.MouseEvent<HTMLElement>) {
         e.preventDefault();
         const sidebar = e.currentTarget;
         if (
@@ -26,7 +26,7 @@ export default function useSidebar() {
         }
     }
     return {
-        onMouseOutAndLeave,
+        handleMouseOutAndLeave,
         collapseMenus,
         toggleSidebar,
     };

@@ -1,5 +1,5 @@
 export default function useSidebarLink() {
-    function handleSidebarLinkClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    function handleSidebarLinkClick(e: React.MouseEvent<HTMLElement>) {
         e.preventDefault();
         e.currentTarget
             .closest("ul")

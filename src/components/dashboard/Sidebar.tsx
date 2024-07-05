@@ -10,14 +10,14 @@ import {
 import useSidebar from "../../hooks/useSidebar";
 
 export default function Sidebar() {
-    const { onMouseOutAndLeave, toggleSidebar } = useSidebar();
+    const { handleMouseOutAndLeave, toggleSidebar } = useSidebar();
 
     return (
         <>
             <div
-                className="fixed z-40 top-0 left-0 -translate-x-full md:translate-x-0 w-64 h-full bg-indigo-950 flex flex-col transition-all group/sidebar peer/sidebar md:[&.collapsed]:w-[58px] md:[&.collapsed]:hover:w-64 [&.mobile-shown]:translate-x-0"
+                className="fixed z-40 top-0 left-0 -translate-x-full md:translate-x-0 w-64 h-full bg-indigo-950 dark:bg-neutral-900 flex flex-col transition-all group/sidebar peer/sidebar md:[&.collapsed]:w-[58px] md:[&.collapsed]:hover:w-64 [&.mobile-shown]:translate-x-0"
                 data-sidebar
-                onMouseLeave={onMouseOutAndLeave}
+                onMouseLeave={handleMouseOutAndLeave}
             >
                 <div className="text-center h-16 flex items-center justify-center border-b border-b-neutral-700 flex-shrink-0">
                     <Link
@@ -36,6 +36,7 @@ export default function Sidebar() {
                     <div className="space-y-8">
                         <SidebarLinkList label="Main">
                             <SidebarLinkItem
+                                to="/dashboard"
                                 icon={
                                     <SidebarLinkItemIcon>
                                         <Home size={18} />
@@ -53,10 +54,22 @@ export default function Sidebar() {
                                 label="Course"
                             >
                                 <SidebarSubLinkList>
-                                    <SidebarSubLinkItem label="Search course" />
-                                    <SidebarSubLinkItem label="Course details" />
-                                    <SidebarSubLinkItem label="Student list" />
-                                    <SidebarSubLinkItem label="Student overview" />
+                                    <SidebarSubLinkItem
+                                        to="/course/search"
+                                        label="Search course"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/course/detail"
+                                        label="Course details"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/course/student/list"
+                                        label="Student list"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/course/student/overview"
+                                        label="Student overview"
+                                    />
                                 </SidebarSubLinkList>
                             </SidebarLinkItem>
                             <SidebarLinkItem
@@ -68,8 +81,14 @@ export default function Sidebar() {
                                 label="My account"
                             >
                                 <SidebarSubLinkList>
-                                    <SidebarSubLinkItem label="Profile" />
-                                    <SidebarSubLinkItem label="Settings" />
+                                    <SidebarSubLinkItem
+                                        to="/profile"
+                                        label="Profile"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/settings"
+                                        label="Settings"
+                                    />
                                 </SidebarSubLinkList>
                             </SidebarLinkItem>
                         </SidebarLinkList>
@@ -83,10 +102,22 @@ export default function Sidebar() {
                                 label="Authentication"
                             >
                                 <SidebarSubLinkList>
-                                    <SidebarSubLinkItem label="Login" />
-                                    <SidebarSubLinkItem label="Register" />
-                                    <SidebarSubLinkItem label="Forgot password" />
-                                    <SidebarSubLinkItem label="Reset password" />
+                                    <SidebarSubLinkItem
+                                        to="/login"
+                                        label="Login"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/signup"
+                                        label="Register"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/forgot-password"
+                                        label="Forgot password"
+                                    />
+                                    <SidebarSubLinkItem
+                                        to="/reset-password"
+                                        label="Reset password"
+                                    />
                                 </SidebarSubLinkList>
                             </SidebarLinkItem>
                         </SidebarLinkList>

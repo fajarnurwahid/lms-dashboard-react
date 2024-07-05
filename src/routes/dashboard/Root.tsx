@@ -6,7 +6,7 @@ export default function DashboardRoot() {
     return (
         <>
             <Sidebar />
-            <div className="md:ml-64 min-h-screen bg-neutral-100 md:peer-[.collapsed]/sidebar:ml-[58px] transition-all">
+            <div className="md:ml-64 min-h-screen bg-neutral-100 dark:bg-neutral-800 md:peer-[.collapsed]/sidebar:ml-[58px] transition-all">
                 <Navbar />
                 <Outlet />
             </div>
