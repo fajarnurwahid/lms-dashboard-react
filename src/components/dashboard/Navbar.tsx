@@ -15,16 +15,12 @@ import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Popover, PopoverTrigger, PopoverContent } from "../ui/Popover";
 import { Link } from "react-router-dom";
+import useTheme from "../../contexts/ThemeContext";
 
 export default function Navbar() {
     const { toggleSidebar } = useSidebar();
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    function handleThemeMode() {
-        document.documentElement.classList.toggle("dark");
-        setIsDarkMode((prev) => !prev);
-    }
+    const { theme, setTheme } = useTheme();
 
     return (
         <div className="h-16 bg-neutral-100 dark:bg-neutral-800 px-4 flex items-center">
@@ -47,9 +43,11 @@ export default function Navbar() {
             >
                 <NavbarButton
                     className="hidden sm:flex sm:items-center sm:justify-center"
-                    onClick={handleThemeMode}
+                    onClick={() =>
+                        setTheme(theme === "dark" ? "light" : "dark")
+                    }
                 >
-                    {isDarkMode ? <Sun size={14} /> : <Moon size={14} />}
+                    {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
                 </NavbarButton>
                 <NavbarButton
                     className="sm:hidden"

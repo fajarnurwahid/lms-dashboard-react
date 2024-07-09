@@ -1,8 +1,9 @@
 import { twMerge } from "tailwind-merge";
 import { Link, LinkProps } from "react-router-dom";
 
-type BreadcrumbProps = React.HTMLAttributes<HTMLDivElement> & {
+type BreadcrumbProps = {
     children: React.ReactNode;
+    className?: string;
 };
 type BreadcrumbLinkProps = LinkProps & {
     children: React.ReactNode;
@@ -25,14 +26,14 @@ export function BreadcrumbLink({ children, ...props }: BreadcrumbLinkProps) {
     return (
         <Link
             {...props}
-            className="text-indigo-500 text-sm hover:underline first:ml-2"
+            className="text-indigo-600 dark:text-indigo-400 text-sm hover:underline first:ml-2"
         >
             {children}
         </Link>
     );
 }
 
-export function BreadcrumbActive({ children }: React.PropsWithChildren) {
+export function BreadcrumbActive({ children }: { children: React.ReactNode }) {
     return <span className="text-sm first:ml-2">{children}</span>;
 }
 

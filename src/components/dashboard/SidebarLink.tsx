@@ -38,7 +38,9 @@ export function SidebarLinkList({
                     <span className="w-1.5 h-0 border-b border-b-white/30 mx-auto hidden mt-2 md:group-[.collapsed]/sidebar:block md:group-[.collapsed]/sidebar:group-hover/sidebar:hidden"></span>
                 </div>
             )}
-            <ul className="space-y-2">{children}</ul>
+            <ul className="space-y-2" data-sidebar-link-list>
+                {children}
+            </ul>
         </div>
     );
 }
