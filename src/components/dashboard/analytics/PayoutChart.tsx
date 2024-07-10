@@ -32,7 +32,7 @@ export default function PayoutChart() {
                         total: {
                             show: true,
                             showAlways: true,
-                            fontFamily: "Nunito Sans, sans-serif",
+                            fontFamily: "inherit",
                             fontSize: "16px",
                             color: theme === "dark" ? "#d4d4d4" : "#404040",
                             formatter(w) {
@@ -45,7 +45,7 @@ export default function PayoutChart() {
                             },
                         },
                         value: {
-                            fontFamily: "Nunito Sans, sans-serif",
+                            fontFamily: "inherit",
                             fontSize: "24px",
                             fontWeight: 600,
                             color: theme === "dark" ? "#f5f5f5" : "#171717",

@@ -9,11 +9,19 @@ import {
     BreadcrumbActive,
 } from "../../components/dashboard/Breadcrumb";
 import { Card, CardHeader, CardBody } from "../../components/dashboard/Card";
-import { GraduationCap, ArrowRight } from "lucide-react";
+import { GraduationCap, ArrowRight, MoreHorizontal } from "lucide-react";
 import TrendingKeywordChart from "../../components/dashboard/analytics/TrendingKeywordChart";
 import { Link } from "react-router-dom";
 import Payout from "../../components/dashboard/analytics/Payout";
-import { Table, Th, Td } from "../../components/dashboard/Table";
+import { Table } from "../../components/dashboard/Table";
+import PopularCourseHead from "../../components/dashboard/analytics/PopularCourseHead";
+import PopularCourseItem from "../../components/dashboard/analytics/PopularCourseItem";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "../../components/ui/Popover";
+import EnrollmentRateChart from "../../components/dashboard/analytics/EnrollmentRateChart";
 
 export default function Analytics() {
     return (
@@ -84,9 +92,49 @@ export default function Analytics() {
                     </div>
                 </OverviewItem>
             </Overview>
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6">
-                <div className="lg:col-span-3 xl:col-span-4">
-                    <Card className="mb-4 md:mb-6">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div>
+                    <Card>
+                        <CardHeader className="flex items-center justify-between space-x-2">
+                            <h2 className="font-bold truncate">
+                                Enrollment Rate
+                            </h2>
+                            <Link
+                                to="/"
+                                className="text-xs text-neutral-500 flex items-center space-x-1 hover:text-neutral-700 dark:hover:text-neutral-300 whitespace-nowrap"
+                            >
+                                <span>View All</span>
+                                <ArrowRight size={14} />
+                            </Link>
+                        </CardHeader>
+                        <CardBody className="pt-0">
+                            <EnrollmentRateChart
+                                categories={[
+                                    "Jan 1",
+                                    "Jan 2",
+                                    "Jan 3",
+                                    "Jan 4",
+                                    "Jan 5",
+                                    "Jan 6",
+                                    "Jan 7",
+                                    "Jan 8",
+                                    "Jan 9",
+                                    "Jan 10",
+                                ]}
+                                data={{
+                                    paid: [
+                                        13, 22, 35, 45, 50, 12, 55, 68, 72, 88,
+                                    ],
+                                    free: [
+                                        10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
+                                    ],
+                                }}
+                            />
+                        </CardBody>
+                    </Card>
+                </div>
+                <div>
+                    <Card>
                         <CardHeader className="flex items-center justify-between space-x-2">
                             <h2 className="font-bold truncate">
                                 Trending Keywords
@@ -117,106 +165,109 @@ export default function Analytics() {
                             />
                         </CardBody>
                     </Card>
+                </div>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div className="lg:col-span-3 xl:col-span-4">
                     <Card>
-                        <CardHeader>
+                        <CardHeader className="flex items-center justify-between space-x-2">
                             <h2 className="font-bold truncate">
                                 Popular Courses
                             </h2>
+                            <Popover placement="bottom-end">
+                                <PopoverTrigger asChild>
+                                    <button
+                                        type="button"
+                                        className="w-6 h-6 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:bg-white dark:hover:bg-neutral-950 hover:shadow [&[data-state='open']]:bg-white dark:[&[data-state='open']]:bg-neutral-950 [&[data-state='open']]:shadow rounded"
+                                    >
+                                        <MoreHorizontal size={14} />
+                                    </button>
+                                </PopoverTrigger>
+                                <PopoverContent className="z-30 w-40">
+                                    <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-1">
+                                        <Link
+                                            to="/profile"
+                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                        >
+                                            View
+                                        </Link>
+                                        <Link
+                                            to="/profile"
+                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                        >
+                                            Export
+                                        </Link>
+                                        <Link
+                                            to="/profile"
+                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-red-50 dark:hover:bg-neutral-950 rounded-md text-red-600 dark:text-neutral-300 dark:hover:text-white hover:text-red-600"
+                                        >
+                                            Remove
+                                        </Link>
+                                    </div>
+                                </PopoverContent>
+                            </Popover>
                         </CardHeader>
                         <CardBody className="pt-0 overflow-x-auto">
                             <Table>
                                 <thead>
-                                    <tr>
-                                        <Th>Course Title</Th>
-                                        <Th>Trainer</Th>
-                                        <Th className="text-right">
-                                            Published on
-                                        </Th>
-                                        <Th className="text-right">Enrolled</Th>
-                                        <Th className="text-right">Price</Th>
-                                    </tr>
+                                    <PopularCourseHead />
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <Td>
-                                            <Link
-                                                to="/"
-                                                className="text-indigo-600 text-sm font-semibold hover:underline"
-                                            >
-                                                Course title here
-                                            </Link>
-                                        </Td>
-                                        <Td>
-                                            <Link
-                                                to="/"
-                                                className="flex items-center space-x-2"
-                                            >
-                                                <img
-                                                    src="https://github.com/shadcn.png"
-                                                    alt=""
-                                                    className="w-6 h-6 object-cover rounded-full flex-shrink-0"
-                                                />
-                                                <span className="font-semibold text-sm">
-                                                    Jonathan
-                                                </span>
-                                            </Link>
-                                        </Td>
-                                        <Td className="text-right">
-                                            <span className="text-sm text-neutral-700">
-                                                11/12/21
-                                            </span>
-                                        </Td>
-                                        <Td className="text-right">
-                                            <span className="text-sm text-neutral-700">
-                                                3,423
-                                            </span>
-                                        </Td>
-                                        <Td className="text-right">
-                                            <span className="text-sm text-neutral-700">
-                                                $53
-                                            </span>
-                                        </Td>
-                                    </tr>
-                                    <tr>
-                                        <Td>
-                                            <Link
-                                                to="/"
-                                                className="text-indigo-600 text-sm font-semibold hover:underline"
-                                            >
-                                                Course title here
-                                            </Link>
-                                        </Td>
-                                        <Td>
-                                            <Link
-                                                to="/"
-                                                className="flex items-center space-x-2"
-                                            >
-                                                <img
-                                                    src="https://github.com/shadcn.png"
-                                                    alt=""
-                                                    className="w-6 h-6 object-cover rounded-full flex-shrink-0"
-                                                />
-                                                <span className="font-semibold text-sm">
-                                                    Jonathan
-                                                </span>
-                                            </Link>
-                                        </Td>
-                                        <Td className="text-right">
-                                            <span className="text-sm text-neutral-700">
-                                                11/12/21
-                                            </span>
-                                        </Td>
-                                        <Td className="text-right">
-                                            <span className="text-sm text-neutral-700">
-                                                3,423
-                                            </span>
-                                        </Td>
-                                        <Td className="text-right">
-                                            <span className="text-sm text-neutral-700">
-                                                $53
-                                            </span>
-                                        </Td>
-                                    </tr>
+                                    <PopularCourseItem
+                                        to="/"
+                                        title="Course title here"
+                                        trainer={{
+                                            name: "Jonathan",
+                                            image: "https://github.com/shadcn.png",
+                                        }}
+                                        publishedOn="11/12/21"
+                                        enrolled="3,423"
+                                        price="$53"
+                                    />
+                                    <PopularCourseItem
+                                        to="/"
+                                        title="Course title here"
+                                        trainer={{
+                                            name: "John Doe",
+                                            image: "https://github.com/shadcn.png",
+                                        }}
+                                        publishedOn="11/12/21"
+                                        enrolled="1,748"
+                                        price="$97"
+                                    />
+                                    <PopularCourseItem
+                                        to="/"
+                                        title="Course title here"
+                                        trainer={{
+                                            name: "Jonathan",
+                                            image: "https://github.com/shadcn.png",
+                                        }}
+                                        publishedOn="11/12/21"
+                                        enrolled="3,423"
+                                        price="$53"
+                                    />
+                                    <PopularCourseItem
+                                        to="/"
+                                        title="Course title here"
+                                        trainer={{
+                                            name: "John Doe",
+                                            image: "https://github.com/shadcn.png",
+                                        }}
+                                        publishedOn="11/12/21"
+                                        enrolled="1,748"
+                                        price="$97"
+                                    />
+                                    <PopularCourseItem
+                                        to="/"
+                                        title="Course title here"
+                                        trainer={{
+                                            name: "Jonathan",
+                                            image: "https://github.com/shadcn.png",
+                                        }}
+                                        publishedOn="11/12/21"
+                                        enrolled="3,423"
+                                        price="$53"
+                                    />
                                 </tbody>
                             </Table>
                         </CardBody>

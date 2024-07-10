@@ -54,7 +54,7 @@ export default function TrendingKeywordChart({
             series={series}
             type="bar"
             width="100%"
-            height={350}
+            height={320}
         />
     );
 }

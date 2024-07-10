@@ -1,14 +1,14 @@
 import { twMerge } from "tailwind-merge";
+import { forwardRef } from "react";
 
 type NavbarButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
     children: React.ReactNode;
 };
 
-export default function NavbarButton({
-    children,
-    className,
-    ...props
-}: NavbarButtonProps) {
+function NavbarButton(
+    { children, className, ...props }: NavbarButtonProps,
+    ref: any
+) {
     return (
         <button
             type="button"
@@ -17,8 +17,11 @@ export default function NavbarButton({
                 className
             )}
             {...props}
+            ref={ref}
         >
             {children}
         </button>
     );
 }
+
+export default forwardRef<HTMLButtonElement, NavbarButtonProps>(NavbarButton);

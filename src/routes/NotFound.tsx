@@ -16,7 +16,7 @@ export default function NotFound() {
                         <div className="text-center">
                             <Link
                                 to="/dashboard"
-                                className="h-10 px-4 inline-flex items-center text-center bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:bg-indigo-700 transition-colors"
+                                className="h-10 px-4 inline-flex items-center justify-center text-center bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:bg-indigo-700 transition-colors"
                             >
                                 Go to dashboard
                             </Link>

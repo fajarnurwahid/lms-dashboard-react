@@ -43,7 +43,9 @@ export function OverviewItem({
                 className
             )}
         >
-            <p className="mb-3 text-sm">{label}</p>
+            <p className="mb-3 text-sm text-neutral-700 dark:text-neutral-300">
+                {label}
+            </p>
             <p className="text-2xl font-medium mb-2 leading-tight">{value}</p>
             <div className="flex items-center space-x-2">
                 <p className="text-xs text-neutral-500">This Month</p>
