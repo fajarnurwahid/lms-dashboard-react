@@ -22,7 +22,7 @@ export default function Sidebar() {
                 <div className="text-center h-16 flex items-center justify-center border-b border-b-neutral-700 flex-shrink-0">
                     <Link
                         to="/dashboard"
-                        className="font-black text-2xl text-white"
+                        className="font-black text-2xl text-neutral-100"
                     >
                         <span className="md:group-[.collapsed]/sidebar:hidden md:group-[.collapsed]/sidebar:group-hover/sidebar:inline">
                             LOGO

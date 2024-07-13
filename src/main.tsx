@@ -5,6 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DashboardRoot from "./routes/dashboard/Root";
 import Analytics from "./routes/dashboard/Analytics";
 import NotFound from "./routes/NotFound";
+import Login from "./routes/authentication/Login";
+import Signup from "./routes/authentication/Signup";
+import AuthenticationRoot from "./routes/authentication/Root";
+import ForgotPassword from "./routes/authentication/ForgotPassword";
+import ResetPassword from "./routes/authentication/ResetPassword";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +22,27 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Analytics />,
+            },
+        ],
+    },
+    {
+        element: <AuthenticationRoot />,
+        children: [
+            {
+                path: "/login/",
+                element: <Login />,
+            },
+            {
+                path: "/signup/",
+                element: <Signup />,
+            },
+            {
+                path: "/forgot-password/",
+                element: <ForgotPassword />,
+            },
+            {
+                path: "/reset-password/",
+                element: <ResetPassword />,
             },
         ],
     },

@@ -32,7 +32,7 @@ export default function EnrollmentRateChart({
         tooltip: {
             theme: theme,
         },
-        colors: ["#6366f1", "#f97316"],
+        colors: ["#4f46e5", "#ea580c"],
         fill: {
             colors: ["transparent", "#f97316"],
             type: "gradient",
@@ -52,7 +52,7 @@ export default function EnrollmentRateChart({
         markers: {
             size: 4,
             strokeWidth: 2,
-            strokeColors: ["#6366f1", "#f97316"],
+            strokeColors: ["#4f46e5", "#ea580c"],
             colors: [theme === "dark" ? "#171717" : "#fff"],
             radius: 2,
             hover: {

@@ -61,7 +61,7 @@ export default function Navbar() {
                         <NavbarButton className="relative">
                             <ShoppingCart size={14} />
                             <span className="animate-ping absolute -top-1 -right-1 w-4 h-4 rounded-full bg-indigo-600 opacity-75"></span>
-                            <span className="absolute -top-1 -right-1 bg-indigo-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">
+                            <span className="absolute -top-1 -right-1 bg-indigo-600 text-neutral-100 w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">
                                 3
                             </span>
                         </NavbarButton>
@@ -87,21 +87,21 @@ export default function Navbar() {
                         <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-1 space-y-1">
                             <Link
                                 to="/profile"
-                                className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-indigo-600"
                             >
                                 <User2Icon size={16} />
                                 <span>Profile</span>
                             </Link>
                             <Link
                                 to="/settings"
-                                className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-indigo-600"
                             >
                                 <Settings2 size={16} />
                                 <span>Settings</span>
                             </Link>
                             <Link
                                 to="/logout"
-                                className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-indigo-600"
                             >
                                 <LogOut size={16} />
                                 <span>Logout</span>

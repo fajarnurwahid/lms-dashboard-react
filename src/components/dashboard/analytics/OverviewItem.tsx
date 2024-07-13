@@ -1,10 +1,6 @@
-import { twMerge } from "tailwind-merge";
 import { ArrowDown, ArrowUp } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
-type OverviewProps = {
-    children: React.ReactNode;
-    className?: string;
-};
 type OverviewItemProps = {
     label: string;
     value: string;
@@ -16,20 +12,7 @@ type OverviewItemProps = {
     className?: string;
 };
 
-export function Overview({ children, className }: OverviewProps) {
-    return (
-        <div
-            className={twMerge(
-                "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6",
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
-}
-
-export function OverviewItem({
+export default function OverviewItem({
     label,
     value,
     className,

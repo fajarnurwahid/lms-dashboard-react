@@ -1,14 +1,11 @@
-import {
-    Overview,
-    OverviewItem,
-} from "../../components/dashboard/analytics/Overview";
+import OverviewItem from "../../components/dashboard/analytics/OverviewItem";
 import {
     Breadcrumb,
     BreadcrumbLink,
     BreadcrumbDivider,
     BreadcrumbActive,
 } from "../../components/dashboard/Breadcrumb";
-import { Card, CardHeader, CardBody } from "../../components/dashboard/Card";
+import { Card, CardHeader, CardBody } from "../../components/dashboard/ui/Card";
 import { GraduationCap, ArrowRight, MoreHorizontal } from "lucide-react";
 import TrendingKeywordChart from "../../components/dashboard/analytics/TrendingKeywordChart";
 import { Link } from "react-router-dom";
@@ -38,9 +35,9 @@ export default function Analytics() {
                     </Breadcrumb>
                 </div>
             </div>
-            <Overview className="mb-4 md:mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
                 <OverviewItem
-                    className="border-l-indigo-500"
+                    className="border-l-indigo-600"
                     label="Total Learners"
                     value="34,564"
                     progress={{
@@ -48,12 +45,12 @@ export default function Analytics() {
                         value: "3,45%",
                     }}
                 >
-                    <div className="w-16 h-16 rounded-full bg-indigo-500 text-white flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-indigo-600/10 dark:ring-indigo-600/20">
+                    <div className="w-16 h-16 rounded-full bg-indigo-600 text-neutral-100 flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-indigo-600/20 dark:ring-indigo-400/20">
                         <GraduationCap size={24} className="mt-3 mr-3" />
                     </div>
                 </OverviewItem>
                 <OverviewItem
-                    className="border-l-green-500"
+                    className="border-l-green-600"
                     label="Total Trainers"
                     value="253"
                     progress={{
@@ -61,12 +58,12 @@ export default function Analytics() {
                         value: "3,45%",
                     }}
                 >
-                    <div className="w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-green-600/10 dark:ring-green-600/20">
+                    <div className="w-16 h-16 rounded-full bg-green-600 text-neutral-100 flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-green-600/20 dark:ring-green-400/20">
                         <GraduationCap size={24} className="mt-3 mr-3" />
                     </div>
                 </OverviewItem>
                 <OverviewItem
-                    className="border-l-orange-500"
+                    className="border-l-orange-600"
                     label="Total Courses"
                     value="2,348"
                     progress={{
@@ -74,12 +71,12 @@ export default function Analytics() {
                         value: "3,45%",
                     }}
                 >
-                    <div className="w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-orange-600/10 dark:ring-orange-600/20">
+                    <div className="w-16 h-16 rounded-full bg-orange-600 text-neutral-100 flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-orange-600/20 dark:ring-orange-400/20">
                         <GraduationCap size={24} className="mt-3 mr-3" />
                     </div>
                 </OverviewItem>
                 <OverviewItem
-                    className="border-l-pink-500"
+                    className="border-l-pink-600"
                     label="Total Revenue"
                     value="$6,346"
                     progress={{
@@ -87,11 +84,11 @@ export default function Analytics() {
                         value: "3,45%",
                     }}
                 >
-                    <div className="w-16 h-16 rounded-full bg-pink-500 text-white flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-pink-600/10 dark:ring-pink-600/20">
+                    <div className="w-16 h-16 rounded-full bg-pink-600 text-neutral-100 flex items-center justify-center absolute -top-4 -right-4 ring-8 ring-pink-600/20 dark:ring-pink-400/20">
                         <GraduationCap size={24} className="mt-3 mr-3" />
                     </div>
                 </OverviewItem>
-            </Overview>
+            </div>
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 <div>
                     <Card>
@@ -167,7 +164,7 @@ export default function Analytics() {
                     </Card>
                 </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6 mb-4 md:mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6">
                 <div className="lg:col-span-3 xl:col-span-4">
                     <Card>
                         <CardHeader className="flex items-center justify-between space-x-2">
@@ -187,19 +184,19 @@ export default function Analytics() {
                                     <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-1">
                                         <Link
                                             to="/profile"
-                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-indigo-600"
                                         >
                                             View
                                         </Link>
                                         <Link
                                             to="/profile"
-                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-white hover:text-indigo-600"
+                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-indigo-600"
                                         >
                                             Export
                                         </Link>
                                         <Link
                                             to="/profile"
-                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-red-50 dark:hover:bg-neutral-950 rounded-md text-red-600 dark:text-neutral-300 dark:hover:text-white hover:text-red-600"
+                                            className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-red-50 dark:hover:bg-neutral-950 rounded-md text-red-600 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-red-600"
                                         >
                                             Remove
                                         </Link>

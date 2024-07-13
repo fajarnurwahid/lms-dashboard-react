@@ -17,7 +17,7 @@ export function Th({ children, className }: TableProps) {
     return (
         <th
             className={twMerge(
-                "py-4 border-b border-b-neutral-100 font-bold text-neutral-500 text-xs tracking-wide text-left uppercase",
+                "py-4 border-b border-b-neutral-100 dark:border-b-neutral-800 font-bold text-neutral-500 text-xs tracking-wide text-left uppercase",
                 className
             )}
         >
@@ -29,7 +29,10 @@ export function Th({ children, className }: TableProps) {
 export function Td({ children, className }: TableProps) {
     return (
         <td
-            className={twMerge("py-3 border-b border-b-neutral-100", className)}
+            className={twMerge(
+                "py-3 border-b border-b-neutral-100 dark:border-b-neutral-800",
+                className
+            )}
         >
             {children}
         </td>

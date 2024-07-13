@@ -19,8 +19,8 @@ export default function PayoutItem({
                 className={twMerge(
                     "w-8 h-8 rounded flex items-center justify-center flex-shrink-0",
                     theme === "primary"
-                        ? "bg-indigo-600/10 dark:bg-indigo-600/20 text-indigo-600"
-                        : "bg-orange-600/10 dark:bg-orange-600/20 text-orange-600"
+                        ? "bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 dark:bg-indigo-400/20"
+                        : "bg-orange-600/20 text-orange-600 dark:text-orange-400 dark:bg-orange-400/20"
                 )}
             >
                 {icon}

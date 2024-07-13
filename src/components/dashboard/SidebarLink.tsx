@@ -31,7 +31,7 @@ export function SidebarLinkList({
     return (
         <div className={twMerge(className)}>
             {label && (
-                <div className="text-xs text-white/50 font-semibold mb-3 relative before:absolute before:top-1/2 before:-translate-y-1/2 before:left-0 before:w-full before:h-0 before:border-b before:border-white/10 min-h-4 md:group-[.collapsed]/sidebar:before:hidden md:group-[.collapsed]/sidebar:group-hover/sidebar:before:block truncate">
+                <div className="text-xs text-neutral-100/50 font-semibold mb-3 relative before:absolute before:top-1/2 before:-translate-y-1/2 before:left-0 before:w-full before:h-0 before:border-b before:border-white/10 min-h-4 md:group-[.collapsed]/sidebar:before:hidden md:group-[.collapsed]/sidebar:group-hover/sidebar:before:block truncate">
                     <span className="inline-block px-3 bg-indigo-950 dark:bg-neutral-900 relative md:group-[.collapsed]/sidebar:hidden md:group-[.collapsed]/sidebar:group-hover/sidebar:inline-block">
                         {label}
                     </span>
@@ -64,7 +64,7 @@ export function SidebarLinkItem({
             {to ? (
                 <Link
                     to={to}
-                    className="flex items-center px-3 h-9 rounded-lg space-x-2 hover:bg-white/10 text-white/60 hover:text-white sidebar-link-item-link"
+                    className="flex items-center px-3 h-9 rounded-lg space-x-2 hover:bg-white/10 text-neutral-100/60 hover:text-neutral-100 sidebar-link-item-link"
                 >
                     {icon}
                     <span className="font-semibold text-sm min-w-0 truncate">
@@ -80,7 +80,7 @@ export function SidebarLinkItem({
             ) : (
                 <button
                     type="button"
-                    className="flex items-center px-3 h-9 rounded-lg space-x-2 hover:bg-white/10 text-white/60 hover:text-white w-full text-left sidebar-link-item-link"
+                    className="flex items-center px-3 h-9 rounded-lg space-x-2 hover:bg-white/10 text-neutral-100/60 hover:text-neutral-100 w-full text-left sidebar-link-item-link"
                     onClick={(e) => handleSidebarLinkClick(e)}
                 >
                     {icon}
@@ -134,7 +134,7 @@ export function SidebarSubLinkItem({
             {to ? (
                 <Link
                     to={to}
-                    className="flex items-center px-3 h-8 rounded-lg hover:bg-white/10 text-white/60 hover:text-white before:w-1.5 before:h-0 before:rounded-full before:border-b before:border-white/30 before:bg-white/10 before:mr-3 text-xs hover:before:border-white sidebar-link-item-sublink"
+                    className="flex items-center px-3 h-8 rounded-lg hover:bg-white/10 text-neutral-100/60 hover:text-neutral-100 before:w-1.5 before:h-0 before:rounded-full before:border-b before:border-white/30 before:bg-white/10 before:mr-3 text-xs hover:before:border-white sidebar-link-item-sublink"
                 >
                     <span className="font-semibold text-sm min-w-0 truncate">
                         {label}
@@ -149,7 +149,7 @@ export function SidebarSubLinkItem({
             ) : (
                 <button
                     type="button"
-                    className="flex items-center px-3 h-8 rounded-lg hover:bg-white/10 text-white/60 hover:text-white w-full text-left before:w-1.5 before:h-0 before:rounded-full before:border-b before:border-white/30 before:bg-white/10 before:mr-3 text-xs hover:before:border-white sidebar-link-item-sublink"
+                    className="flex items-center px-3 h-8 rounded-lg hover:bg-white/10 text-neutral-100/60 hover:text-neutral-100 w-full text-left before:w-1.5 before:h-0 before:rounded-full before:border-b before:border-white/30 before:bg-white/10 before:mr-3 text-xs hover:before:border-white sidebar-link-item-sublink"
                     onClick={(e) => handleSidebarLinkClick(e)}
                 >
                     <span className="font-semibold text-sm min-w-0 truncate">

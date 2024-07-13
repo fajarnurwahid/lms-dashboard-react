@@ -19,7 +19,7 @@ export default function PayoutChart() {
             enabled: false,
         },
         labels: ["Paid", "Unpaid"],
-        colors: ["#6366f1", "#fdba74"],
+        colors: ["#4f46e5", "#fdba74"],
         stroke: {
             show: false,
         },

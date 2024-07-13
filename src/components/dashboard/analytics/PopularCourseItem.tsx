@@ -26,7 +26,7 @@ export default function PopularCourseItem({
             <Td>
                 <Link
                     to={to}
-                    className="text-indigo-600 text-sm font-semibold hover:underline"
+                    className="text-indigo-600 dark:text-indigo-400 text-sm font-semibold hover:underline"
                 >
                     {title}
                 </Link>
@@ -42,13 +42,19 @@ export default function PopularCourseItem({
                 </Link>
             </Td>
             <Td className="text-right">
-                <span className="text-sm text-neutral-700">{publishedOn}</span>
+                <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                    {publishedOn}
+                </span>
             </Td>
             <Td className="text-right">
-                <span className="text-sm text-neutral-700">{enrolled}</span>
+                <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                    {enrolled}
+                </span>
             </Td>
             <Td className="text-right">
-                <span className="text-sm text-neutral-700">{price}</span>
+                <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                    {price}
+                </span>
             </Td>
         </tr>
     );

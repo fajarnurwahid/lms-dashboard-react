@@ -36,7 +36,7 @@ export default function TrendingKeywordChart({
         tooltip: {
             theme: theme,
         },
-        colors: ["#6366f1"],
+        colors: ["#4f46e5"],
         grid: {
             borderColor: theme === "dark" ? "#262626" : "#f5f5f5",
         },
