@@ -181,7 +181,7 @@ export default function Analytics() {
                                     </button>
                                 </PopoverTrigger>
                                 <PopoverContent className="z-30 w-40">
-                                    <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-1">
+                                    <div className="bg-white dark:bg-neutral-900 rounded-lg shadow dark:shadow-white/10 p-1">
                                         <Link
                                             to="/profile"
                                             className="flex items-center space-x-3 h-8 px-3 text-sm hover:bg-indigo-50 dark:hover:bg-neutral-950 rounded-md text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-100 hover:text-indigo-600"

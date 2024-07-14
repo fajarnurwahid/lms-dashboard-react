@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Cart() {
     return (
-        <div className="bg-white dark:bg-neutral-900 rounded-lg shadow">
+        <div className="bg-white dark:bg-neutral-900 rounded-lg shadow dark:shadow-white/10">
             <div className="py-3 px-4 flex items-center justify-between space-x-2 border-b border-b-neutral-100 dark:border-b-neutral-800">
                 <p className="font-medium">Cart items</p>
                 <span className="h-5 px-2 rounded bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 flex items-center text-xs font-medium">

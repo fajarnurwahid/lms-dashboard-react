@@ -8,9 +8,11 @@ import {
     SidebarLinkItemIcon,
 } from "./SidebarLink";
 import useSidebar from "../../hooks/useSidebar";
+import { useLocation, matchPath, matchRoutes } from "react-router-dom";
 
 export default function Sidebar() {
     const { handleMouseOutAndLeave, toggleSidebar } = useSidebar();
+    const location = useLocation();
 
     return (
         <>
@@ -43,7 +45,12 @@ export default function Sidebar() {
                                     </SidebarLinkItemIcon>
                                 }
                                 label="Analytics"
-                                isActive={true}
+                                isActive={Boolean(
+                                    matchPath(
+                                        { path: "/dashboard", end: true },
+                                        location.pathname
+                                    )
+                                )}
                             />
                             <SidebarLinkItem
                                 icon={
@@ -52,23 +59,62 @@ export default function Sidebar() {
                                     </SidebarLinkItemIcon>
                                 }
                                 label="Course"
+                                isActive={location.pathname.startsWith(
+                                    "/dashboard/course"
+                                )}
                             >
                                 <SidebarSubLinkList>
                                     <SidebarSubLinkItem
-                                        to="/course/search"
+                                        to="/dashboard/course/search"
                                         label="Search course"
+                                        isActive={Boolean(
+                                            matchPath(
+                                                {
+                                                    path: "/dashboard/course/search",
+                                                    end: true,
+                                                },
+                                                location.pathname
+                                            )
+                                        )}
                                     />
                                     <SidebarSubLinkItem
-                                        to="/course/detail"
+                                        to="/dashboard/course/detail"
                                         label="Course details"
+                                        isActive={Boolean(
+                                            matchPath(
+                                                {
+                                                    path: "/dashboard/course/detail",
+                                                    end: true,
+                                                },
+                                                location.pathname
+                                            )
+                                        )}
                                     />
                                     <SidebarSubLinkItem
-                                        to="/course/student/list"
+                                        to="/dashboard/course/student/list"
                                         label="Student list"
+                                        isActive={Boolean(
+                                            matchPath(
+                                                {
+                                                    path: "/dashboard/course/student/list",
+                                                    end: true,
+                                                },
+                                                location.pathname
+                                            )
+                                        )}
                                     />
                                     <SidebarSubLinkItem
-                                        to="/course/student/overview"
+                                        to="/dashboard/course/student/overview"
                                         label="Student overview"
+                                        isActive={Boolean(
+                                            matchPath(
+                                                {
+                                                    path: "/dashboard/course/student/overview",
+                                                    end: true,
+                                                },
+                                                location.pathname
+                                            )
+                                        )}
                                     />
                                 </SidebarSubLinkList>
                             </SidebarLinkItem>
