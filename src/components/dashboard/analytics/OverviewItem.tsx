@@ -22,7 +22,7 @@ export default function OverviewItem({
     return (
         <div
             className={twMerge(
-                "relative border-l-4 rounded-lg bg-white dark:bg-neutral-900 p-6 overflow-hidden shadow",
+                "relative border-l-4 rounded-lg bg-white dark:bg-neutral-900 p-4 md:p-6 overflow-hidden shadow",
                 className
             )}
         >

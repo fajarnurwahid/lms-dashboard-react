@@ -1,11 +1,23 @@
 import Input from "../../components/ui/Input";
 import Select from "../../components/ui/Select";
 import { Grid, List, Search } from "lucide-react";
+import {
+    Tooltip,
+    TooltipTrigger,
+    TooltipContent,
+} from "../../components/ui/Tooltip";
+import SearchCourse from "../../components/dashboard/course/SearchCourse";
+import SearchCourseItem from "../../components/dashboard/course/SearchCourseItem";
+import { SearchCourseType } from "../../components/dashboard/course/SearchCourse";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export default function CourseSearch() {
+    const [type, setType] = useState<SearchCourseType>("grid");
+
     return (
         <div className="p-4">
-            <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-4">
+            <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-4 mb-4 md:mb-6">
                 <form
                     action=""
                     className="sm:flex sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 justify-between mb-6"
@@ -42,21 +54,105 @@ export default function CourseSearch() {
                         <span className="text-sm text-neutral-500 hidden sm:block">
                             View:
                         </span>
-                        <button
-                            type="button"
-                            className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 [&.active]:text-neutral-700 dark:[&.active]:text-neutral-300 active"
-                        >
-                            <Grid size={20} />
-                        </button>
-                        <button
-                            type="button"
-                            className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 [&.active]:text-neutral-700 dark:[&.active]:text-neutral-300"
-                        >
-                            <List size={20} />
-                        </button>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <button
+                                    type="button"
+                                    className={twMerge(
+                                        "text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 [&.active]:text-neutral-700 dark:[&.active]:text-neutral-300",
+                                        type === "grid" && "active"
+                                    )}
+                                    onClick={() => setType("grid")}
+                                >
+                                    <Grid size={20} />
+                                </button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Grid view</p>
+                            </TooltipContent>
+                        </Tooltip>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <button
+                                    type="button"
+                                    className={twMerge(
+                                        "text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 [&.active]:text-neutral-700 dark:[&.active]:text-neutral-300",
+                                        type === "list" && "active"
+                                    )}
+                                    onClick={() => setType("list")}
+                                >
+                                    <List size={20} />
+                                </button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>List view</p>
+                            </TooltipContent>
+                        </Tooltip>
                     </div>
                 </div>
             </div>
+            <SearchCourse type={type}>
+                <SearchCourseItem
+                    image="https://github.com/shadcn.png"
+                    author={{
+                        link: "/",
+                        name: "John Doe",
+                    }}
+                    link="/"
+                    rating={4.2}
+                    title="Lorem ipsum dolor sit amet consectetur adipisicing."
+                    price={{
+                        current: 43,
+                        old: 54,
+                    }}
+                    learners={453}
+                />
+                <SearchCourseItem
+                    image="https://github.com/shadcn.png"
+                    author={{
+                        link: "/",
+                        name: "Jonathan",
+                    }}
+                    link="/"
+                    rating={4.5}
+                    title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nostrum quod perferendis possimus dicta."
+                    price={{
+                        current: 78,
+                        old: 132,
+                    }}
+                    learners={923}
+                />
+                <SearchCourseItem
+                    image="https://github.com/shadcn.png"
+                    author={{
+                        link: "/",
+                        name: "John Doe",
+                    }}
+                    link="/"
+                    rating={4.2}
+                    title="Lorem ipsum dolor sit amet consectetur adipisicing."
+                    price={{
+                        current: 43,
+                        old: 54,
+                    }}
+                    learners={453}
+                />
+                <SearchCourseItem
+                    image="https://github.com/shadcn.png"
+                    author={{
+                        link: "/",
+                        name: "Jonathan",
+                    }}
+                    link="/"
+                    rating={4.5}
+                    title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nostrum quod perferendis possimus dicta."
+                    price={{
+                        current: 78,
+                        old: 132,
+                    }}
+                    learners={923}
+                />
+            </SearchCourse>
         </div>
     );
 }
