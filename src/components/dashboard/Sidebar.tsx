@@ -8,7 +8,7 @@ import {
     SidebarLinkItemIcon,
 } from "./SidebarLink";
 import useSidebar from "../../hooks/useSidebar";
-import { useLocation, matchPath, matchRoutes } from "react-router-dom";
+import { useLocation, matchPath } from "react-router-dom";
 
 export default function Sidebar() {
     const { handleMouseOutAndLeave, toggleSidebar } = useSidebar();

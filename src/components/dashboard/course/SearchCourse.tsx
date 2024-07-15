@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 
 export type SearchCourseType = "grid" | "list";
 type SearchContextType = {
