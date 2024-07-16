@@ -11,6 +11,7 @@ import AuthenticationRoot from "./routes/authentication/Root";
 import ForgotPassword from "./routes/authentication/ForgotPassword";
 import ResetPassword from "./routes/authentication/ResetPassword";
 import CourseSearch from "./routes/dashboard/CourseSearch";
+import CourseDetails from "./routes/dashboard/CourseDetails";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
                     {
                         path: "/dashboard/course/search/",
                         element: <CourseSearch />,
+                    },
+                    {
+                        path: "/dashboard/course/detail/",
+                        element: <CourseDetails />,
                     },
                 ],
             },

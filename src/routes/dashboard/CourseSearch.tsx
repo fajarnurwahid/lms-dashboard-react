@@ -16,7 +16,7 @@ export default function CourseSearch() {
     const [type, setType] = useState<SearchCourseType>("grid");
 
     return (
-        <div className="p-4">
+        <div className="p-4 md:p-6">
             <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-4 mb-4 md:mb-6">
                 <form
                     action=""
