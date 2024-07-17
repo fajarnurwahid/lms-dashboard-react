@@ -45,7 +45,7 @@ export default function CourseSearch() {
                         </h1>
                         <p className="text-neutral-500 text-sm">
                             Showing{" "}
-                            <span className="font-semibold text-neutral-900">
+                            <span className="font-semibold text-neutral-900 dark:text-neutral-100">
                                 23 courses
                             </span>
                         </p>
