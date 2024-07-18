@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { createContext, useContext } from "react";
 
-export type SearchCourseType = "grid" | "list";
+export type SearchCourseType = "grid" | "list" | undefined;
 type SearchContextType = {
     type: SearchCourseType;
 };
@@ -25,7 +25,7 @@ export function useSearchCourse() {
 export default function SearchCourse({
     children,
     className,
-    type = "grid",
+    type,
     ...props
 }: SearchCourseProps) {
     return (
@@ -38,7 +38,9 @@ export default function SearchCourse({
                 className={twMerge(
                     type === "list"
                         ? "grid grid-cols-1 gap-4 md:gap-6"
-                        : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6",
+                        : type === "grid"
+                        ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+                        : "",
                     className
                 )}
                 {...props}

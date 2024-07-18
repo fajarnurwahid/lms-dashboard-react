@@ -12,6 +12,9 @@
     .btn-primary {
         @apply bg-indigo-600 text-neutral-100 hover:bg-indigo-500 active:bg-indigo-700;
     }
+    .btn-primary-soft {
+        @apply bg-indigo-100 dark:bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500 dark:hover:bg-indigo-500 hover:text-neutral-100 dark:hover:text-neutral-100 active:bg-indigo-600 dark:active:bg-indigo-600;
+    }
     .btn-light {
         @apply bg-neutral-100 border border-neutral-100 dark:border-neutral-700 text-neutral-700 hover:bg-neutral-50 active:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:active:bg-neutral-950 dark:text-neutral-100;
     }
@@ -32,5 +35,8 @@
         > .sidebar-link-item-sublink
         .sidebar-link-item-chevron {
         @apply rotate-90;
+    }
+    .swiper-space-y .swiper-wrapper {
+        @apply py-1;
     }
 }

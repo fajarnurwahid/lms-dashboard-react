@@ -3,7 +3,6 @@ import {
     Star,
     StarHalf,
     Timer,
-    Check,
     Facebook,
     Instagram,
     Twitter,
@@ -11,14 +10,25 @@ import {
     CheckCircle,
     Play,
     Target,
+    UserPlus2,
+    Verified,
+    Video,
 } from "lucide-react";
 import { Card, CardBody, CardHeader } from "../../components/dashboard/ui/Card";
 import {
-    DetailLessonItem,
-    DetailLessonItemLesson,
-    DetailLessonItemLessonItem,
-    DetailLessonItemTrigger,
-} from "../../components/dashboard/course/DetailLessonItem";
+    DetailCourseItem,
+    DetailCourseItemLesson,
+    DetailCourseItemLessonItem,
+    DetailCourseItemTrigger,
+} from "../../components/dashboard/course/DetailCourseItem";
+import Badge from "../../components/ui/Badge";
+import CheckListItem from "../../components/dashboard/ui/CheckListItem";
+import DetailLessonRatingItem from "../../components/dashboard/course/DetailCourseRatingItem";
+import DetailCourseReviewItem from "../../components/dashboard/course/DetailCourseReviewItem";
+import SearchCourse from "../../components/dashboard/course/SearchCourse";
+import SearchCourseItem from "../../components/dashboard/course/SearchCourseItem";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function CourseDetails() {
     return (
@@ -81,18 +91,18 @@ export default function CourseDetails() {
                             </p>
                         </div>
                         <div className="flex items-center flex-wrap space-y-2 space-x-2 -ml-2 -mt-2">
-                            <div className="flex items-center space-x-2 text-xs font-medium first:ml-2 first:mt-2 h-6 px-3 rounded-full bg-neutral-100 dark:bg-neutral-950">
+                            <Badge className="first:ml-2 first:mt-2">
                                 <GraduationCap size={16} />
                                 <span>2,345 learners</span>
-                            </div>
-                            <div className="flex items-center space-x-2 text-xs font-medium first:ml-2 first:mt-2 h-6 px-3 rounded-full bg-neutral-100 dark:bg-neutral-950">
+                            </Badge>
+                            <Badge className="first:ml-2 first:mt-2">
                                 <CheckCircle size={16} />
                                 <span>87% completions</span>
-                            </div>
-                            <div className="flex items-center space-x-2 text-xs font-medium first:ml-2 first:mt-2 h-6 px-3 rounded-full bg-neutral-100 dark:bg-neutral-950">
+                            </Badge>
+                            <Badge className="first:ml-2 first:mt-2">
                                 <GraduationCap size={16} />
                                 <span>2,345 learners</span>
-                            </div>
+                            </Badge>
                         </div>
                     </div>
                     <div className="hidden lg:block w-80 xl:w-96 flex-shrink-0"></div>
@@ -114,69 +124,45 @@ export default function CourseDetails() {
                             </h2>
                         </CardHeader>
                         <CardBody>
-                            <ul className="list-disc space-y-3 text-neutral-700 dark:text-neutral-300 text-sm">
-                                <li className="flex space-x-2">
-                                    <Check
-                                        size={16}
-                                        className="mt-0.5 flex-shrink-0"
-                                    />
+                            <ul className="space-y-3 text-neutral-700 dark:text-neutral-300 text-sm">
+                                <CheckListItem>
                                     <span>
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. At, ad.
                                     </span>
-                                </li>
-                                <li className="flex space-x-2">
-                                    <Check
-                                        size={16}
-                                        className="mt-0.5 flex-shrink-0"
-                                    />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing.
                                     </span>
-                                </li>
-                                <li className="flex space-x-2">
-                                    <Check
-                                        size={16}
-                                        className="mt-0.5 flex-shrink-0"
-                                    />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. Asperiores molestias
                                         magnam sapiente.
                                     </span>
-                                </li>
-                                <li className="flex space-x-2">
-                                    <Check
-                                        size={16}
-                                        className="mt-0.5 flex-shrink-0"
-                                    />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. At, ad.
                                     </span>
-                                </li>
-                                <li className="flex space-x-2">
-                                    <Check
-                                        size={16}
-                                        className="mt-0.5 flex-shrink-0"
-                                    />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing.
                                     </span>
-                                </li>
-                                <li className="flex space-x-2">
-                                    <Check
-                                        size={16}
-                                        className="mt-0.5 flex-shrink-0"
-                                    />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. Asperiores molestias
                                         magnam sapiente.
                                     </span>
-                                </li>
+                                </CheckListItem>
                             </ul>
                         </CardBody>
                     </Card>
@@ -186,65 +172,65 @@ export default function CourseDetails() {
                         </CardHeader>
                         <CardBody>
                             <div className="flex items-center flex-wrap space-y-2 space-x-2 -ml-2 -mt-2 mb-4">
-                                <div className="flex items-center space-x-2 text-xs font-medium first:ml-2 first:mt-2 h-6 px-3 rounded-full bg-neutral-100 dark:bg-neutral-950">
+                                <Badge className="first:ml-2 first:mt-2">
                                     <Target size={16} />
                                     <span>34 sections</span>
-                                </div>
-                                <div className="flex items-center space-x-2 text-xs font-medium first:ml-2 first:mt-2 h-6 px-3 rounded-full bg-neutral-100 dark:bg-neutral-950">
+                                </Badge>
+                                <Badge className="first:ml-2 first:mt-2">
                                     <CheckCircle size={16} />
                                     <span>205 lessons</span>
-                                </div>
-                                <div className="flex items-center space-x-2 text-xs font-medium first:ml-2 first:mt-2 h-6 px-3 rounded-full bg-neutral-100 dark:bg-neutral-950">
+                                </Badge>
+                                <Badge className="first:ml-2 first:mt-2">
                                     <Timer size={16} />
                                     <span>34h 4m</span>
-                                </div>
+                                </Badge>
                             </div>
                             <div className="-mx-4 md:-mx-6 -mb-4 divide-y divide-neutral-100 dark:divide-neutral-800 border-t border-t-neutral-100 dark:border-t-neutral-800">
-                                <DetailLessonItem className="active">
-                                    <DetailLessonItemTrigger
+                                <DetailCourseItem className="active">
+                                    <DetailCourseItemTrigger
                                         label="Overview"
                                         duration="13m"
                                         lesson={7}
                                     />
-                                    <DetailLessonItemLesson>
-                                        <DetailLessonItemLessonItem
+                                    <DetailCourseItemLesson>
+                                        <DetailCourseItemLessonItem
                                             title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, eum."
                                             duration="45:08"
                                             hasPreview={true}
                                         />
-                                        <DetailLessonItemLessonItem
+                                        <DetailCourseItemLessonItem
                                             title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, eum."
                                             duration="23:43"
                                         />
-                                        <DetailLessonItemLessonItem
+                                        <DetailCourseItemLessonItem
                                             type="file"
                                             title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, eum."
                                             duration="10:32"
                                         />
-                                    </DetailLessonItemLesson>
-                                </DetailLessonItem>
-                                <DetailLessonItem>
-                                    <DetailLessonItemTrigger
+                                    </DetailCourseItemLesson>
+                                </DetailCourseItem>
+                                <DetailCourseItem>
+                                    <DetailCourseItemTrigger
                                         label="Overview test"
                                         duration="13m"
                                         lesson={7}
                                     />
-                                    <DetailLessonItemLesson>
-                                        <DetailLessonItemLessonItem
+                                    <DetailCourseItemLesson>
+                                        <DetailCourseItemLessonItem
                                             type="file"
                                             title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, eum."
                                             duration="24:13"
                                         />
-                                        <DetailLessonItemLessonItem
+                                        <DetailCourseItemLessonItem
                                             title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, eum."
                                             duration="15:46"
                                         />
-                                        <DetailLessonItemLessonItem
+                                        <DetailCourseItemLessonItem
                                             title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, eum."
                                             duration="34:45"
                                         />
-                                    </DetailLessonItemLesson>
-                                </DetailLessonItem>
+                                    </DetailCourseItemLesson>
+                                </DetailCourseItem>
                             </div>
                         </CardBody>
                     </Card>
@@ -278,6 +264,224 @@ export default function CourseDetails() {
                             </ul>
                         </CardBody>
                     </Card>
+                    <Card>
+                        <CardHeader>
+                            <h2 className="font-bold truncate">Instructor</h2>
+                        </CardHeader>
+                        <CardBody>
+                            <div className="flex sm:items-center space-x-4 justify-between mb-4">
+                                <div className="sm:flex sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 min-w-0">
+                                    <img
+                                        src="https://github.com/shadcn.png"
+                                        alt=""
+                                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0"
+                                    />
+                                    <div className="min-w-0">
+                                        <Link
+                                            to="/"
+                                            className="text-indigo-600 dark:text-indigo-400 font-semibold text-lg hover:underline inline-block mb-1"
+                                        >
+                                            Jonathan
+                                        </Link>
+                                        <p className="text-neutral-500 text-sm truncate">
+                                            Web Developer
+                                        </p>
+                                    </div>
+                                </div>
+                                <Link
+                                    to="/"
+                                    className="btn btn-primary-soft btn-sm ml-auto space-x-2"
+                                >
+                                    <UserPlus2 size={16} />
+                                    <span>Follow</span>
+                                </Link>
+                            </div>
+                            <p className="text-neutral-500 text-sm mb-4">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolorem, officia delectus ab
+                                aut totam reprehenderit adipisci! Sit error
+                                nihil ea.
+                            </p>
+                            <div className="flex items-center flex-wrap space-y-2 space-x-2 -ml-2 -mt-2 mb-4">
+                                <Badge className="first:ml-2 first:mt-2">
+                                    <Verified size={16} />
+                                    <span>1,432 reviews</span>
+                                </Badge>
+                                <Badge className="first:ml-2 first:mt-2">
+                                    <Star size={16} />
+                                    <span>4.8 rating</span>
+                                </Badge>
+                                <Badge className="first:ml-2 first:mt-2">
+                                    <GraduationCap size={16} />
+                                    <span>1,654 learners</span>
+                                </Badge>
+                                <Badge className="first:ml-2 first:mt-2">
+                                    <Video size={16} />
+                                    <span>94 courses</span>
+                                </Badge>
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardHeader>
+                            <h2 className="font-bold truncate">
+                                Reviews & Ratings
+                            </h2>
+                        </CardHeader>
+                        <CardBody>
+                            <div className="xl:flex xl:space-x-6">
+                                <div className="xl:w-56 xl:flex-shrink-0">
+                                    <div className="flex items-center space-x-2 mb-4">
+                                        <Star
+                                            size={18}
+                                            className="text-orange-400 fill-orange-400"
+                                        />
+                                        <span className="font-semibold">
+                                            4.6 rating
+                                        </span>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <DetailLessonRatingItem
+                                            progress="70%"
+                                            star={5}
+                                            total={1345}
+                                        />
+                                        <DetailLessonRatingItem
+                                            progress="67%"
+                                            star={4}
+                                            total={983}
+                                        />
+                                        <DetailLessonRatingItem
+                                            progress="54%"
+                                            star={3}
+                                            total={545}
+                                        />
+                                        <DetailLessonRatingItem
+                                            progress="34%"
+                                            star={2}
+                                            total={23}
+                                        />
+                                        <DetailLessonRatingItem
+                                            progress="23%"
+                                            star={1}
+                                            total={4}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="w-full min-w-0 divide-y divide-neutral-200 dark:divide-neutral-800 mt-6 border-t border-t-neutral-200 dark:border-t-neutral-800 xl:mt-0 xl:border-t-0">
+                                    <DetailCourseReviewItem
+                                        image="https://github.com/shadcn.png"
+                                        user="Jonathan"
+                                        rating={4.7}
+                                        created="a day ago"
+                                        review="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, consectetur reprehenderit? Ex iste impedit perferendis animi quam minus modi reprehenderit!"
+                                    />
+                                    <DetailCourseReviewItem
+                                        image="https://github.com/shadcn.png"
+                                        user="Jonathan"
+                                        rating={4.7}
+                                        created="a day ago"
+                                        review="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, consectetur reprehenderit? Ex iste impedit perferendis animi quam minus modi reprehenderit!"
+                                    />
+                                    <DetailCourseReviewItem
+                                        image="https://github.com/shadcn.png"
+                                        user="Jonathan"
+                                        rating={4.7}
+                                        created="a day ago"
+                                        review="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, consectetur reprehenderit? Ex iste impedit perferendis animi quam minus modi reprehenderit!"
+                                    />
+                                </div>
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <div>
+                        <h2 className="font-bold mb-2">More Courses</h2>
+                        <SearchCourse>
+                            <Swiper
+                                spaceBetween={16}
+                                slidesPerView={1}
+                                breakpoints={{
+                                    576: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 24,
+                                    },
+                                    1200: {
+                                        slidesPerView: 3,
+                                    },
+                                }}
+                                className="swiper-space-y"
+                            >
+                                <SwiperSlide>
+                                    <SearchCourseItem
+                                        image="https://github.com/shadcn.png"
+                                        author={{
+                                            link: "/",
+                                            name: "John Doe",
+                                        }}
+                                        link="/"
+                                        rating={4.2}
+                                        title="Lorem ipsum dolor sit amet consectetur adipisicing."
+                                        price={{
+                                            current: 43,
+                                            old: 54,
+                                        }}
+                                        learners={453}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <SearchCourseItem
+                                        image="https://github.com/shadcn.png"
+                                        author={{
+                                            link: "/",
+                                            name: "John Doe",
+                                        }}
+                                        link="/"
+                                        rating={4.2}
+                                        title="Lorem ipsum dolor sit amet consectetur adipisicing."
+                                        price={{
+                                            current: 43,
+                                            old: 54,
+                                        }}
+                                        learners={453}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <SearchCourseItem
+                                        image="https://github.com/shadcn.png"
+                                        author={{
+                                            link: "/",
+                                            name: "John Doe",
+                                        }}
+                                        link="/"
+                                        rating={4.2}
+                                        title="Lorem ipsum dolor sit amet consectetur adipisicing."
+                                        price={{
+                                            current: 43,
+                                            old: 54,
+                                        }}
+                                        learners={453}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <SearchCourseItem
+                                        image="https://github.com/shadcn.png"
+                                        author={{
+                                            link: "/",
+                                            name: "John Doe",
+                                        }}
+                                        link="/"
+                                        rating={4.2}
+                                        title="Lorem ipsum dolor sit amet consectetur adipisicing."
+                                        price={{
+                                            current: 43,
+                                            old: 54,
+                                        }}
+                                        learners={453}
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                        </SearchCourse>
+                    </div>
                 </div>
                 <div className="lg:w-80 xl:w-96 lg:flex-shrink-0 lg:-mt-48 mb-4 md:mb-6 lg:mb-0 lg:sticky lg:top-20 order-1 lg:order-2">
                     <Card className="overflow-hidden">
@@ -314,35 +518,29 @@ export default function CourseDetails() {
                             <p className="font-semibold text-sm mb-2">
                                 Course features:
                             </p>
-                            <ul className="space-y-2">
-                                <li className="flex items-center space-x-2 text-sm text-neutral-500">
-                                    <Check size={16} />
+                            <ul className="space-y-2 text-neutral-500 text-sm">
+                                <CheckListItem>
                                     <span>
                                         Total 13 hours of video lectures
                                     </span>
-                                </li>
-                                <li className="flex items-center space-x-2 text-sm text-neutral-500">
-                                    <Check size={16} />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>12 premium article access</span>
-                                </li>
-                                <li className="flex items-center space-x-2 text-sm text-neutral-500">
-                                    <Check size={16} />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>11 downloadable resources</span>
-                                </li>
-                                <li className="flex items-center space-x-2 text-sm text-neutral-500">
-                                    <Check size={16} />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>
                                         Total 13 hours of video lectures
                                     </span>
-                                </li>
-                                <li className="flex items-center space-x-2 text-sm text-neutral-500">
-                                    <Check size={16} />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>12 premium article access</span>
-                                </li>
-                                <li className="flex items-center space-x-2 text-sm text-neutral-500">
-                                    <Check size={16} />
+                                </CheckListItem>
+                                <CheckListItem>
                                     <span>11 downloadable resources</span>
-                                </li>
+                                </CheckListItem>
                             </ul>
                             <hr className="my-4 border-neutral-100 dark:border-neutral-800" />
                             <p className="font-semibold text-sm mb-2">

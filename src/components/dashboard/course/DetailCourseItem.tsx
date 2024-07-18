@@ -3,15 +3,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
-type DetailLessonItemProps = React.HTMLAttributes<HTMLDivElement> & {
+type DetailCourseItemProps = {
     children: React.ReactNode;
 };
-type DetailLessonItemTriggerProps = {
+type DetailCourseItemTriggerProps = {
     label: string;
     duration: string;
     lesson: number;
 };
-type DetailLessonItemLessonItemProps = {
+type DetailCourseItemLessonItemProps = {
     type?: "video" | "file";
     title: string;
     duration: string;
@@ -19,11 +19,11 @@ type DetailLessonItemLessonItemProps = {
     previewLink?: string;
 };
 
-export function DetailLessonItem({
+export function DetailCourseItem({
     children,
     className,
     ...props
-}: DetailLessonItemProps) {
+}: React.HTMLAttributes<HTMLDivElement> & DetailCourseItemProps) {
     return (
         <div
             className={twMerge("group/lesson-section", className)}
@@ -35,11 +35,11 @@ export function DetailLessonItem({
     );
 }
 
-export function DetailLessonItemTrigger({
+export function DetailCourseItemTrigger({
     label,
     duration,
     lesson,
-}: DetailLessonItemTriggerProps) {
+}: DetailCourseItemTriggerProps) {
     function handleTriggerClick(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         e.currentTarget
@@ -65,7 +65,7 @@ export function DetailLessonItemTrigger({
     );
 }
 
-export function DetailLessonItemLesson({ children }: DetailLessonItemProps) {
+export function DetailCourseItemLesson({ children }: DetailCourseItemProps) {
     return (
         <div className="px-4 md:px-6 py-4 hidden group-[.active]/lesson-section:block">
             <div className="ml-6 space-y-3">{children}</div>
@@ -73,13 +73,13 @@ export function DetailLessonItemLesson({ children }: DetailLessonItemProps) {
     );
 }
 
-export function DetailLessonItemLessonItem({
+export function DetailCourseItemLessonItem({
     type = "video",
     title,
     duration,
     hasPreview = false,
     previewLink = "/",
-}: DetailLessonItemLessonItemProps) {
+}: DetailCourseItemLessonItemProps) {
     return (
         <div className="flex items-center">
             {type === "file" ? (

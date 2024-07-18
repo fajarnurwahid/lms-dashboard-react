@@ -90,32 +90,6 @@ export default function Sidebar() {
                                             )
                                         )}
                                     />
-                                    <SidebarSubLinkItem
-                                        to="/dashboard/course/student/list"
-                                        label="Student list"
-                                        isActive={Boolean(
-                                            matchPath(
-                                                {
-                                                    path: "/dashboard/course/student/list",
-                                                    end: true,
-                                                },
-                                                location.pathname
-                                            )
-                                        )}
-                                    />
-                                    <SidebarSubLinkItem
-                                        to="/dashboard/course/student/overview"
-                                        label="Student overview"
-                                        isActive={Boolean(
-                                            matchPath(
-                                                {
-                                                    path: "/dashboard/course/student/overview",
-                                                    end: true,
-                                                },
-                                                location.pathname
-                                            )
-                                        )}
-                                    />
                                 </SidebarSubLinkList>
                             </SidebarLinkItem>
                             <SidebarLinkItem
