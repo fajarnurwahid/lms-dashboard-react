@@ -99,15 +99,37 @@ export default function Sidebar() {
                                     </SidebarLinkItemIcon>
                                 }
                                 label="My account"
+                                isActive={[
+                                    "/dashboard/profile",
+                                    "/dashboard/settings",
+                                ].includes(location.pathname)}
                             >
                                 <SidebarSubLinkList>
                                     <SidebarSubLinkItem
-                                        to="/profile"
+                                        to="/dashboard/profile"
                                         label="Profile"
+                                        isActive={Boolean(
+                                            matchPath(
+                                                {
+                                                    path: "/dashboard/profile",
+                                                    end: true,
+                                                },
+                                                location.pathname
+                                            )
+                                        )}
                                     />
                                     <SidebarSubLinkItem
-                                        to="/settings"
+                                        to="/dashboard/settings"
                                         label="Settings"
+                                        isActive={Boolean(
+                                            matchPath(
+                                                {
+                                                    path: "/dashboard/settings",
+                                                    end: true,
+                                                },
+                                                location.pathname
+                                            )
+                                        )}
                                     />
                                 </SidebarSubLinkList>
                             </SidebarLinkItem>

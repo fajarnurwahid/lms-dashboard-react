@@ -12,6 +12,7 @@ import ForgotPassword from "./routes/authentication/ForgotPassword";
 import ResetPassword from "./routes/authentication/ResetPassword";
 import CourseSearch from "./routes/dashboard/CourseSearch";
 import CourseDetails from "./routes/dashboard/CourseDetails";
+import Profile from "./routes/dashboard/Profile";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                         element: <CourseDetails />,
                     },
                 ],
+            },
+            {
+                path: "/dashboard/profile/",
+                element: <Profile />,
             },
         ],
     },
