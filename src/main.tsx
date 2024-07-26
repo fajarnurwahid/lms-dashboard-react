@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import DashboardRoot from "./routes/dashboard/Root";
+import DashboardRoot from "./routes/dashboard/DashboardRoot";
 import Analytics from "./routes/dashboard/Analytics";
 import NotFound from "./routes/NotFound";
 import Login from "./routes/authentication/Login";
@@ -13,6 +13,9 @@ import ResetPassword from "./routes/authentication/ResetPassword";
 import CourseSearch from "./routes/dashboard/CourseSearch";
 import CourseDetails from "./routes/dashboard/CourseDetails";
 import Profile from "./routes/dashboard/Profile";
+import { default as SettingProfile } from "./routes/dashboard/settings/Profile";
+import SettingsRoot from "./routes/dashboard/settings/SettingsRoot";
+import ChangePassword from "./routes/dashboard/settings/ChangePassword";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +44,21 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/profile/",
                 element: <Profile />,
+            },
+            {
+                path: "/dashboard/settings/",
+                element: <SettingsRoot />,
+                children: [
+                    {
+                        path: "/dashboard/settings/profile/",
+                        index: true,
+                        element: <SettingProfile />,
+                    },
+                    {
+                        path: "/dashboard/settings/change-password/",
+                        element: <ChangePassword />,
+                    },
+                ],
             },
         ],
     },

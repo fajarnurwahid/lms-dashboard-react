@@ -18,6 +18,9 @@
     .btn-light {
         @apply bg-neutral-100 border border-neutral-100 dark:border-neutral-700 text-neutral-700 hover:bg-neutral-50 active:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:active:bg-neutral-950 dark:text-neutral-100;
     }
+    .btn-outline-light {
+        @apply bg-transparent border border-neutral-100 text-neutral-100 hover:bg-neutral-50 hover:text-neutral-900 active:bg-neutral-200;
+    }
 
     .sidebar-link-item.active > .sidebar-link-item-link {
         @apply bg-white/10 text-neutral-100;

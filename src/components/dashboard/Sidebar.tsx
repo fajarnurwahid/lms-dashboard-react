@@ -99,10 +99,18 @@ export default function Sidebar() {
                                     </SidebarLinkItemIcon>
                                 }
                                 label="My account"
-                                isActive={[
-                                    "/dashboard/profile",
-                                    "/dashboard/settings",
-                                ].includes(location.pathname)}
+                                isActive={Boolean(
+                                    matchPath(
+                                        {
+                                            path: "/dashboard/profile",
+                                            end: true,
+                                        },
+                                        location.pathname
+                                    ) ||
+                                        location.pathname.includes(
+                                            "/dashboard/settings"
+                                        )
+                                )}
                             >
                                 <SidebarSubLinkList>
                                     <SidebarSubLinkItem
@@ -119,16 +127,10 @@ export default function Sidebar() {
                                         )}
                                     />
                                     <SidebarSubLinkItem
-                                        to="/dashboard/settings"
+                                        to="/dashboard/settings/profile"
                                         label="Settings"
-                                        isActive={Boolean(
-                                            matchPath(
-                                                {
-                                                    path: "/dashboard/settings",
-                                                    end: true,
-                                                },
-                                                location.pathname
-                                            )
+                                        isActive={location.pathname.includes(
+                                            "/dashboard/settings"
                                         )}
                                     />
                                 </SidebarSubLinkList>
